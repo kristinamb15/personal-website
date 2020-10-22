@@ -22,8 +22,6 @@ Responsive design adjusts for functionality across devices.
 
 ## Setup & Usage
 
----
-
 1. Make sure you have the requirements installed.
 
 2. From the root directory (where package.json file is), run:
@@ -52,8 +50,6 @@ Responsive design adjusts for functionality across devices.
 
 ## Notes
 
----
-
 - The header image is found on [Pexels](https://www.pexels.com/), a great site for free stock images.
 
 - Icons in the sprite file (img/sprite.svg) are found on [Icomoon](https://icomoon.io/app/#/select/library).
@@ -64,8 +60,6 @@ Responsive design adjusts for functionality across devices.
 <br><br>
 
 ## Files & Directories
-
----
 
     📦kristinabrantley
     ┣ 📂src
@@ -118,8 +112,6 @@ Responsive design adjusts for functionality across devices.
 <br>            
 
 ## Licensing
-
----
 
 Please respect that the content (text, about.jpg) is Copyright Kristina Brantley. Design and implementation elements are free for appropriate use under the MIT License (see [LICENSE.txt](LICENSE.txt)).
 
