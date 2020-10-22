@@ -13,8 +13,6 @@ Responsive design adjusts for functionality across devices.
 
 ## Requirements
 
----
-
 - JavaScript
 - Node.js
 - npm
