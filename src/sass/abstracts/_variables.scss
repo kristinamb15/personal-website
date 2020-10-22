@@ -1,0 +1,52 @@
+/// Main colors.
+$color-white: #fff;
+$color-black: #000;
+
+$color-grey-dark-1: #423d4e;
+$color-grey-dark-2: #a39db1;
+$color-grey-light-1: #faf9fa;
+$color-grey-light-2: #e2e0e6;
+
+$color-primary: #5f27cd;
+$color-primary-light:#8f67dc;
+$color-primary-dark: #421b8f;
+
+$color-matching-1:#587CD5;
+$color-matching-2:  #4DFCE0;
+$color-analagous-1: #cd5327;
+$color-analagous-2: #a1cd27;
+
+$color-btn-dark: #5257E5;
+$color-social-bar: #332790;
+
+/// Social media colors.
+$color-linkedin: #007bb5;
+$color-github: #A0A0A0;
+
+/// Reusable gradients.
+$gradient-primary: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+
+$gradient-grey: linear-gradient(to right bottom, rgba($color-grey-light-2, 0.4), rgba($color-grey-dark-2, 0.4));
+
+$gradient-main: radial-gradient(farthest-corner, #5f27cd, #5257E5, #54A7D8);
+
+$gradient-header: linear-gradient(to right bottom, #5f27cdcc, #5B52D1cc, #587CD5cc, #54A7D8cc, #51D1DCcc, #4DFCE0cc), url(../img/hero.jpg);
+
+$gradient-footer: linear-gradient(to left top, #5f27cd, #5B52D1, #587CD5, #54A7D8, #51D1DC, #4DFCE0);
+
+$gradient-menu: radial-gradient(closest-corner at 2rem 2rem, #5f27cd, #5B52D1, #587CD5, #54A7D8, #51D1DC, #4DFCE0);
+
+/// Font variables.
+$font-primary: 'Raleway', sans-serif;
+$font-display: 'Monoton', cursive;
+
+/// Reusable shadows.
+$shadow-plain: 0 0 .5rem rgba(0, 0, 0, 0.6);
+$shadow-hover: .5rem 1rem 2rem rgba($color-black, .6);
+$shadow-tech: 0 3px 3px rgba($color-black, .4);
+$shadow-accent-1: -.5rem .5rem .5rem rgba($color-matching-1, .4);
+$shadow-accent-2: .5rem -.5rem .5rem rgba($color-analagous-2, .4);
+
+/// Height variables.
+$section-height: 100%;
+$footer-height: 100%;

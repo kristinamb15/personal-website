@@ -1,0 +1,85 @@
+// Social media bar styling.
+.social {   
+
+    &__bar {
+        list-style: none;
+        width: 4rem;
+        grid-area: social;
+        display: flex;
+        flex-direction: column;        
+        max-height: 9rem;
+        position: absolute;
+        top: 3rem;
+
+        @include respond(tab-port) {
+            top: 2rem;
+        }
+
+        a {
+            &:link,
+            &:visited,
+            &:hover,
+            &:active {
+                text-decoration: none;
+            }
+        }
+    }
+    
+    &__item {
+        background-color: $color-social-bar;
+        padding: .5rem .7rem .6rem 0;
+        display: flex;
+        flex-direction: row-reverse;
+        margin-left: -8rem;
+        column-gap: 1.5rem;
+        justify-content: flex-start;
+        align-items: center;
+        cursor: pointer;
+        transition: transform .5s cubic-bezier(.15,.84,.46,.9);
+
+        height: 4.5rem;
+
+        @include respond(phone) {
+            height: 3.5rem;
+            padding: .5rem .4rem .6rem 0;
+        }
+
+        &--linkedin {
+            svg {
+                fill: $color-linkedin;
+            }
+        }
+
+        &--github {
+            svg {
+                fill: $color-github;
+            }
+        }
+
+        svg {            
+            height: 3rem;
+            width: 3rem;
+
+            @include respond(phone) {
+                height: 2.5rem;
+            }
+        }
+
+        &--text {
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            font-size: 1.3rem;
+            line-height: 1;
+            font-weight: 500;
+            color: $color-white;
+            max-height: 3rem;
+        }
+
+        &:hover,
+        &:active {
+            transform: translate3d(8rem, 0, 0);
+            text-decoration: none;
+        } 
+    }    
+}

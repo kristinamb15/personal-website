@@ -1,0 +1,247 @@
+// Main navigation menu styling.
+.navigation {
+    height: 0;
+
+    // Chekbox to control visibility of main menu.
+    &__checkbox {
+        display: none;
+    }
+
+    // Menu button (3 lines).
+    &__button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        height: 5rem;
+        width: 5rem;
+        border-radius: 50%;
+        position: fixed;
+        top: 3rem;
+        right: 3rem;
+        cursor: pointer;
+        background-color: $color-social-bar;
+
+        z-index: 300;
+
+        @include respond(tab-port) {
+            right: 2rem;
+            top: 2rem;
+        }
+
+        @include respond(phone) {
+            height: 4rem;
+            width: 4rem;
+        }
+
+        @include respond(phone-mid) {
+            right: 1rem;
+            top: 1rem;
+        }
+    }
+
+    // Individual lines on button.
+    &__x {
+        width: 3rem;
+        height: .25rem;
+        overflow: visible;
+        position: relative;
+
+        @include respond(phone) {
+            width: 2.5rem;
+        }
+
+        &--top,
+        &--middle,
+        &--bottom {
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            width: 3rem;
+            height: 2px;
+            background-color: $color-grey-light-1;
+
+            @include respond(phone) {
+                width: 2.5rem;
+            }
+        }
+
+        &--top { 
+            top: -.6rem;
+            transition: all .2s; 
+        }
+
+        &--bottom {
+            top: .6rem;
+            transition: all .2s;
+        }
+
+        &--middle {
+            opacity: 1;
+            transition: opacity .2s linear .5s;
+        }
+    }
+
+    // Button lines space apart on hover.
+    &__button:hover &__x--top {
+        top: -1rem;
+    }
+
+    &__button:hover &__x--bottom {
+        top: 1rem;
+    }
+
+    // Middle button line disappears on click.
+    &__checkbox:checked + &__button &__x--middle {
+        opacity: 0;
+    }
+
+    // Main menu background hiding behind button.
+    &__background {
+        height: 5rem;
+        width: 5rem;
+        border-radius: 50%;
+        position: fixed;
+        top: 3rem;
+        right: 3rem;
+        background-image: $gradient-menu;
+
+        z-index: 100;
+        transition: transform .8s cubic-bezier(.86, 0, .07, 1);
+
+        @include respond(tab-port) {
+            right: 2rem;
+            top: 2rem;
+        }
+
+        @include respond(phone) {
+            height: 4rem;
+            width: 4rem;
+        }
+
+        @include respond(phone-mid) {
+            right: 1rem;
+            top: 1rem;
+        }
+    }
+
+    // Main menu.
+    &__menu {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 150;
+        width: 0;
+        opacity: 0;
+        
+        transition: all .8s cubic-bezier(.68, -.55, .265, 1.55);
+    }
+
+    // Main menu items.
+    &__list {
+        @include absCenter;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    // Individual menu items.
+    &__item {
+        font-size: 2rem;
+        text-transform: uppercase;
+        color: $color-white;
+    }
+
+    // Animate menu items on hover.
+    &__item:hover,
+    &__social:hover {
+        animation: heartBeat 2s infinite;
+    }
+
+    &__separator {
+        height: 3px;
+        width: 30%;
+        border-radius: 2px;
+        background-color: $color-white;
+        box-shadow: $shadow-plain;
+
+        @include respond(phone) {
+            width: 50%;
+        }
+    }
+
+    // Menu items: links you may have missed
+    &__box {
+        display: grid;
+        row-gap: 1rem;
+        column-gap: 3rem;
+        justify-items: center;
+        grid-template-areas: "title title title"
+                            "linkedin github thesis";
+    }
+
+    &__missed {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        color: $color-white;
+
+        grid-area: title;
+    }
+
+    &__social {
+        &:link,
+        &:visited,
+        &:active {
+            text-decoration: none;
+            padding: .5rem;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            color: $color-grey-light-2;
+            box-shadow: $shadow-tech;
+            font-weight: 500;
+        }
+        
+
+        &--linkedin {
+            grid-area: linkedin;
+            background-color: $color-linkedin;
+        }
+
+        &--github {
+            grid-area: github;
+            background-color: $color-github;
+        }
+
+        &--thesis {
+            grid-area: thesis;
+            background-color: $color-analagous-1;
+        }
+
+        svg {
+            height: 2rem;
+            width: 2rem;
+            fill: $color-grey-light-2;
+        }
+    }
+
+    // Expands menu background from behind button on click.
+    &__checkbox:checked ~ &__background {
+        opacity: 1;
+        transform: scale(80);
+    }
+
+    // Makes menu visible on click.
+    &__checkbox:checked ~ &__menu {
+        width: 100%;
+        opacity: 1;
+    }
+} 

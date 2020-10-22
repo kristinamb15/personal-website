@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="./img/favicon.png">
+    <title>KB | Let's get logical</title>
+</head>
+<body>
+
+    <div class="navigation">
+        <input type="checkbox" class="navigation__checkbox" id="nav-check">
+        <label for="nav-check" class="navigation__button">
+            <div class="navigation__x">
+                <i class="navigation__x--top"></i>
+                <i class="navigation__x--middle"></i>
+                <i class="navigation__x--bottom"></i>
+            </div>
+        </label>
+        <div class="navigation__background">&nbsp;</div>
+        <nav class="navigation__menu">
+            <ul class="navigation__list">
+                <li class="navigation__item" id="about">About Me</li>
+                <li class="navigation__item" id="web">Used on this page</li>
+                <li class="navigation__item" id="other">Other stuff I use</li>
+                <li class="navigation__separator">&nbsp;</li>
+                <div class="navigation__box">
+                    <div class="navigation__missed">Links you may have missed</div>
+                    <a class="navigation__social navigation__social--linkedin" href="https://www.linkedin.com/in/kristinabrantley" target="_blank">
+                        <svg> 
+                            <use xlink:href="./img/sprite.svg#icon-linkedin"></use>
+                        </svg>
+                        <p>LinkedIn</p>
+                    </a>
+                    <a class="navigation__social navigation__social--github" href="https://github.com/kristinamb15" target="_blank">
+                        <svg> 
+                            <use xlink:href="./img/sprite.svg#icon-github-alt"></use>
+                        </svg>
+                        <p>GitHub</p>
+                    </a>
+                    <a class="navigation__social navigation__social--thesis" href="https://search.proquest.com/openview/98d2139fcb1a507939fdd27eb45c4d57/1?pq-origsite=gscholar&cbl=18750&diss=y" target="blank">
+                        <svg> 
+                            <use xlink:href="./img/sprite.svg#icon-grad-cap"></use>
+                        </svg>
+                        <p>PhD Thesis</p>
+                    </a>
+                </div>
+            </ul>
+        </nav>
+    </div>
+
+    <header class="header">
+        <ul class="social__bar">
+            <a href="https://www.linkedin.com/in/kristinabrantley
+            " target="_blank">
+                <li class="social__item social__item--linkedin">
+                    <svg> 
+                        <use xlink:href="./img/sprite.svg#icon-linkedin"></use>
+                    </svg>
+                    <p class="social__item--text">linked in</p>
+                </li>
+            </a>
+            <a href="https://github.com/kristinamb15" target="_blank">
+                <li class="social__item social__item--github">
+                    <svg> 
+                        <use xlink:href="./img/sprite.svg#icon-github-alt"></use>
+                    </svg>
+                    <p class="social__item--text">github</p>
+                </li>
+            </a>
+        </ul>
+        <div class="header__text">
+            <div class="header__text--main">
+                <h1 class="heading-1">
+                    <span class="header__text--line-1">Kristina</span>
+                    <span class="header__text--line-2">Brantley</span>                
+                </h1>
+            </div>
+            <div class="header__text--sub">
+                <h3 class="heading-3">
+                    I'm a recovering academic turned developer<br>
+                    who loves solving problems.
+                </h3>
+            </div>
+        </div>        
+    </header>
+
+    <main>
+
+        <section class="section-about" id="nav-about">
+            <div class="about__grid">
+                <h2 class="heading-2 about__title">
+                    About Me
+                </h2>
+                <img src="./img/about.jpg" alt="Kristina" class="about__photo u-hidden">
+                <div class="about__education about__box u-hidden">
+                    <h4 class="about__education--deg heading-4">PhD, MS, BS Mathematics</h4>
+                </div>
+                <div class="about__research about__box u-hidden">                    
+                    <h5 class="about__research--title heading-5">Research Area</h5>
+                    <p class="about__research--text">Mathematical Logic</p>
+                    <h5 class="heading-5 about__research--title"><a class="link__thesis" href="https://search.proquest.com/openview/98d2139fcb1a507939fdd27eb45c4d57/1?pq-origsite=gscholar&cbl=18750&diss=y" target="blank">Thesis</a></h5>
+                    <p class="about__research--text">Monadic Intuitionistic and Modal Logics Admitting Provability Interpretations</p>
+                </div>
+                <div class="about__text u-hidden">
+                    <p>
+                        The details of my life are quite inconsequential.
+                    </p>
+                    <p>
+                        After graduating in May 2019 with a PhD in Mathematics and spending time teaching undergraduates, I'm ready to apply my zest for logic and organization to the world of software development.
+                    </p>
+                    <p>
+                        I'm an autodidact with a hunger for knowledge &mdash; learning HTML & CSS, Sass, JavaScript, Python, and MySQL via self-study, and currently learning the React framework. 
+                    </p>
+                    <p>
+                        I enjoy writing readable, reusable code and designing beautiful, useful, and responsive things. From the front to the back, I'm here for the full stack.
+                    </p>
+                    <p>
+                        When I'm not being a mathemagician, I enjoy yoga, hanging out with my husband and three dogs, and solving Rubiks Cubes of various sizes.
+                    </p>                 
+                    
+                    <p>Stop by my <a class="link__git" href="https://github.com/kristinamb15" target="_blank">GitHub</a> to check out the code for this site.</p>
+                </div>                
+            </div>
+        </section>
+
+        <section class="section-tech section-tech__web" id="nav-web">
+            <div class="tech__grid tech--web">
+                <h2 class="heading-2 tech__title u-margin-bottom-medium">
+                    Used on this site
+                </h2>
+                <div class="tech__item tech__web u-hidden" id="tech__web--css">
+                    <svg>
+                        <use xlink:href="./img/sprite.svg#icon-css3"></use>
+                    </svg>
+                    <h4 class="heading-4 tech__name">css 3</h4>
+                </div>                
+                <div class="tech__snippet tech__snippet--css">
+                    <figure class="tech__snippet--fig">
+                        <pre><code class="css">@keyframes slideInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10rem);
+    }
+
+    80% {
+        transform: translateY(-1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}</code></pre>
+                        <figcaption>CSS animation for icons</figcaption>
+                    </figure>
+                </div>
+
+                <div class="tech__item tech__web u-hidden" id="tech__web--html">
+                    <svg>
+                        <use xlink:href="./img/sprite.svg#icon-html5"></use>
+                    </svg>
+                    <h4 class="heading-4 tech__name">html 5</h4>
+                </div>
+                <div class="tech__snippet tech__snippet--html">
+                    <figure class="tech__snippet--fig">
+                    <pre><code class="html">&lt;div class="tech__item tech__web u-hidden" id="tech__web--html"&gt;
+    &lt;svg&gt;
+        &lt;use xlink:href="img/sprite.svg#icon-html5"&gt;&lt;/use&gt;
+    &lt;/svg&gt;
+    &lt;h4 class="heading-4 tech__name"&gt;html 5&lt;/h5&gt;
+&lt;/div&gt;</code></pre>
+                        <figcaption>HTML for icons</figcaption>
+                    </figure>
+                </div>
+
+                <div class="tech__item tech__web u-hidden" id="tech__web--sass">
+                    <svg>
+                        <use xlink:href="./img/sprite.svg#icon-sass"></use>
+                    </svg>
+                    <h4 class="heading-4 tech__name">sass</h4>
+                </div>
+                <div class="tech__snippet tech__snippet--sass">
+                    <figure class="tech__snippet--fig">
+                        <pre><code class="scss">&__web:hover {
+    &::after {
+        animation: fadeIn .6s ease-in .2s;
+        animation-fill-mode: both;
+    }
+}</code></pre>
+                        <figcaption>sass for other stuff</figcaption>
+                    </figure>
+                </div>
+
+                <div class="tech__item tech__web u-hidden" id="tech__web--js">
+                    <svg>
+                        <use xlink:href="./img/sprite.svg#icon-javascript"></use>
+                    </svg>
+                    <h4 class="heading-4 tech__name">javascript</h4>
+                </div>
+                <div class="tech__snippet tech__snippet--js">
+                    <figure class="tech__snippet--fig">
+                    <pre><code class="javascript">/** Animating 'Used on this page' section. */
+const techWebObserver = new Observer(DOM.techWebElements);
+techWebObserver.animateIn('moveInUp');
+techWebObserver.createObserver();
+logger(techWebObserver, 'Used on this page animations');</code></pre>
+                        <figcaption>js for icon animation</figcaption>
+                    </figure>
+                </div>
+
+                <div class="tech__item tech__web u-hidden" id="tech__web--npm">
+                    <svg>
+                        <use xlink:href="./img/sprite.svg#icon-npm"></use>
+                    </svg>
+                    <h4 class="heading-4 tech__name">npm</h4>
+                </div>
+                <div class="tech__snippet tech__snippet--npm">
+                    <figure class="tech__snippet--fig">
+                        <pre><code class="json">{
+"scripts": {
+    "start": "webpack serve --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
+    }
+}</code></pre>
+                        <figcaption>js for icon animation</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-tech section-tech__other" id="nav-other">
+            <div class="tech__grid tech--other">
+                <h2 class="heading-2 tech__title u-margin-bottom-medium">
+                    Other stuff I work with
+                </h2>
+                <div class="tech__item tech__other u-hidden" id="tech__other--python">
+                    <svg>
+                        <use xlink:href="./img/sprite.svg#icon-python"></use>
+                    </svg>
+                    <h4 class="heading-4 tech__name">python</h4>
+                </div>
+                <div class="tech__item tech__other u-hidden" id="tech__other--mysql">
+                    <svg>
+                        <use xlink:href="./img/sprite.svg#icon-mysql"></use>
+                    </svg>
+                    <h4 class="heading-4 tech__name">mysql</h4>
+                </div>
+                <div class="tech__item tech__other u-hidden" id="tech__other--react">
+                    <svg>
+                        <use xlink:href="./img/sprite.svg#icon-react"></use>
+                    </svg>
+                    <h4 class="heading-4 tech__name">react</h4>
+                </div>
+                <div class="tech__item tech__other u-hidden" id="tech__other--node">
+                    <svg class="svg--node">
+                        <use xlink:href="./img/sprite.svg#icon-node-js"></use>
+                    </svg>
+                    <h4 class="heading-4 tech__name">node.js</h4>
+                </div>
+                <div class="tech__item tech__other u-hidden" id="tech__other--vscode">
+                    <svg>
+                        <use xlink:href="./img/sprite.svg#icon-vscode"></use>
+                    </svg>
+                    <h4 class="heading-4 tech__name">visual studio code</h4>
+                </div>
+            </div>         
+        </section>
+
+        <footer class="footer" id="footer">
+            <div class="footer__grid">
+                <div class="footer__thankyou heading-3">
+                    Thanks for visiting!
+                </div>
+                <div class="footer__copyright u-center-text">
+                    <p>
+                        Content &copy; 2020 Kristina Brantley. All rights reserved.
+                    </p>                    
+                    <p>
+                        Favicon made by <a href="https://www.flaticon.com/free-icon/rubik_2532683" target="blank" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/" target="blank" title="Flaticon">www.flaticon.com</a>
+                    </p>
+                </div>                     
+            </div>
+            <button class="scroll-btn scroll-btn--dark u-hidden" id="scroll-btn">
+                <svg>
+                    <use xlink:href="./img/sprite.svg#icon-hand"></use>
+                </svg>
+            </button>                     
+        </footer>
+        
+    </main>
+    <noscript>This page requires JavaScript.</noscript>
+</body>
+</html>
+

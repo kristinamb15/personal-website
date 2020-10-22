@@ -1,0 +1,242 @@
+// Elements in Used On This Page/Other Stuff I Work With styling.
+.tech {
+
+    &__grid {
+        @include mainGrid;
+        grid-template-columns: repeat(5, min-content);
+        grid-template-rows: repeat(2, max-content) 1rem;
+        grid-template-areas: "title title title title title"
+                            "item-1 item-2 item-3 item-4 item-5"
+                            "snip snip snip snip snip";
+        align-items: start;
+        justify-items: center;
+        align-content: end;
+        z-index: 2;
+ 
+        @include respond (phone) {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, min-content);
+            row-gap: 0;
+            grid-template-areas: "title title title"
+                                "item-1 .... item-2"
+                                ".... item-3 ...." 
+                                "item-4 .... item-5";
+        }
+    }       
+
+    &__title {
+        grid-area: title;
+        justify-self: center;
+
+        @include respond(phone) {
+            text-align: center;
+        }
+    }
+    
+    // Individual tech item logos.
+    &__item {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+        align-items: center;
+        transition: all .2s;
+        width: 15rem;
+
+        svg {
+            height: 7rem;
+            width: 7rem;
+            fill: $color-primary;
+            filter: drop-shadow($shadow-tech);
+
+            @include respond (tab-port-mid) {
+                height: 6rem;
+                width: 6rem;
+            }
+
+            @include respond (phone-mid) {
+                height: 5rem;
+                width: 5rem;
+            }
+        }
+
+        @include respond (tab-port-mid) {
+            width: 11rem;
+        }
+
+        @include respond(phone-mid) {
+            width: 9rem;
+        }
+    }
+
+    // Individual tech item names.
+    &__name {
+        text-align: center;
+        margin-top: 3px;
+
+        @include respond(phone-mid) {
+            margin-top: 1px;
+        }
+        
+        // Separator line between icon and name.
+        &::before {
+            display: block;
+            height: 2px;
+            background-color: rgba($color-primary, .3);
+            content:" ";
+            width: 2rem;
+            margin: 0 auto;
+            border-radius: 2px;
+            margin-bottom: 1rem;
+            transition: width .2s;
+        }
+    }
+
+    // Code snippets appearing on hover.
+    &__snippet {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        overflow-y: visible;
+        opacity: 0;
+        transition: opacity .2s, width .6s;
+        transition-timing-function: ease-out;
+        z-index: 10;
+
+        @include respond(tab-port) {
+            display: none;
+        }
+
+        &--fig {
+
+            figcaption {
+                display: none;                
+            }
+        }
+
+        grid-row: 3 / 4;
+
+        &--css {
+            grid-column: 1 / 4;
+            justify-self: start;
+        }
+
+        &--html {
+            grid-column: 1 / 4;
+        }
+
+        &--sass {
+            grid-column: 2 / 5;
+        }
+    
+        &--js {
+            grid-column: 2 / 6;
+        }
+    
+        &--npm {
+            justify-self: end;
+            grid-column: 3 / 6;
+        }
+    }
+
+    // Basic hover behavior of tech items.
+    &__item:hover {
+        transform: scale(1.2);
+        perspective: 100px;
+        text-shadow: $shadow-hover;
+    }
+
+    // Tooltip arrow on code snippets appears on hover.
+    &__web:hover {
+        position: relative;
+
+        &::after {
+            @include arrow;
+            animation: fadeIn .6s ease-in .2s;
+            animation-fill-mode: both;
+
+            @include respond(tab-port) {
+                display: none;
+            }
+        }
+    }
+
+    // Code snippets appear on hover of Used On This Page tech items.
+    &__item:hover + &__snippet {
+        opacity: 1;       
+        filter: drop-shadow($shadow-hover);
+
+        &--css {
+            width: 37rem;
+        }
+
+        &--html {
+            width: 55rem;
+        }
+
+        &--sass {
+            width: 42rem;
+        }
+    
+        &--js {
+            width: 60rem;
+        }
+    
+        &--npm {
+            width: 40rem;
+        }
+    }
+
+    // Separator line between icon and name lenghtens on hover.
+    &:hover &__name::before {
+        content: " ";
+        width: 6rem;
+    }
+}
+
+#tech__web {
+
+    &--css {
+        grid-area: item-1;       
+    }
+
+    &--html {
+        grid-area: item-2;
+    }
+
+    &--sass {
+        grid-area: item-3;
+    }
+
+    &--js {
+        grid-area: item-4;
+    }
+
+    &--npm {
+        grid-area: item-5;
+    }
+}
+
+#tech__other {
+
+    &--python {
+        grid-area: item-1;       
+    }
+
+    &--mysql {
+        grid-area: item-2;
+    }
+
+    &--react {
+        grid-area: item-3;
+    }
+
+    &--node {
+        grid-area: item-4;
+    }
+
+    &--vscode {
+        grid-area: item-5;
+    }
+}
+
+

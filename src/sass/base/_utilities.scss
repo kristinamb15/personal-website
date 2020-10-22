@@ -1,0 +1,16 @@
+/// Centers text.
+.u-center-text { text-align: center !important; }
+
+// Sets standard bottom/top margins on elements.
+
+.u-margin-bottom-medium { 
+    margin-bottom: 6rem !important; 
+
+    @include respond(tab-port) {
+        margin-bottom: 5rem !important;
+    }
+}
+
+/// Hides/unhides elements for animation/changes.
+.u-hidden { opacity: 0; }
+.u-visible { opacity: 1; }

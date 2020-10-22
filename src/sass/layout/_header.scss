@@ -1,0 +1,53 @@
+// Header styling.
+.header {
+    @include bgShape($gradient-header, 100vh);
+    
+    background-attachment: fixed;
+    position: relative;   
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+        height: 95vh;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%,
+                                    70% 100%, 0 80%);
+                clip-path: polygon(0 0, 100% 0, 100% 80%,
+                                    70% 100%, 0 80%);
+    }
+
+    &__text {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        align-items: flex-start;  
+        position: absolute;
+        top: 25%;
+        left: 10%;
+
+        @include respond(tab-port-mid) {
+            top: 30%;
+        }
+
+        @include respond(phone) {
+            left: 5%;
+        }
+
+        // First name slide in.
+        &--line-1 {
+            display: block;
+            animation: moveInLeft 1s ease-out;
+        }
+        
+        // Last name slide in.
+        &--line-2 {
+            display: block;
+            animation: moveInRight 1s ease-out;
+        }
+        
+        // Tagline fade-in.
+        &--sub {
+            display: block;
+            opacity: 0;
+            animation: fadeIn 2s ease-in 1s;
+            animation-fill-mode: forwards;
+        }
+    }
+}

@@ -1,0 +1,53 @@
+// General styling of main sections.
+.section-about {
+    height: $section-height;
+    position: relative;
+    padding: 10rem 0;
+
+    @include respond(tab-port) {
+        padding: 7rem 0;
+    }
+}
+
+.section-tech {
+    // Used On This Page section.
+    &__web { 
+        background-color: transparent;   
+        position: relative;
+        height: $section-height;
+        padding: 20rem 0;
+
+        // Grey background and shape.
+        &::before {
+            @include bgShape($gradient-grey, $section-height);
+
+            @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+                -webkit-clip-path: polygon(0 20%, 20% 0, 100% 20%,
+                                            100% 80%, 80% 100%, 0 80%);
+                        clip-path: polygon(0 10%, 30% 0, 100% 10%,
+                                            100% 90%, 70% 100%, 0 90%);
+            }
+        }
+
+        @include respond(tab-port) {
+            padding: 12rem 0;
+        }
+    }
+
+    // Other Stuff I Work With section.
+    &__other {
+        height: $section-height;
+        position: relative;
+        padding: 10rem 0;
+
+        @include respond(tab-port-mid) {
+            padding: 7rem 0;
+        }
+
+        @include respond(phone) {
+            padding: 7rem 0;
+        }
+    }
+}
+
+

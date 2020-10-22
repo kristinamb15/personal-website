@@ -1,0 +1,125 @@
+/// Clears floats.
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    } 
+}
+
+/// Centers an element inside its parent.
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/// Centers an element vertically inside its parent.
+@mixin vertCenter {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/// Tooltip arrow for code snippets.
+@mixin arrow {
+    display: none;
+
+    @supports (clip-path: inset(50%)) {
+        content: " ";
+        display: block;
+        height: 2.5rem;
+        width: 2.5rem;
+        background-color: #343d46;
+        border: 1px solid #343d46;
+        position: absolute;
+        clip-path: polygon(0% 0%, 100% 100%, 100% 0%);
+        transform: rotate(-45deg);
+        transform-origin: 50% 50%;
+        border-radius: 0 .25rem 0 0;
+        bottom: -35%;
+    }
+}
+
+/// Sets up the :before pseduo-element to use when clipping a backround shape.
+///
+/// @param {image} $bg-img
+///   The background image to be clipped.
+/// @param {number} $ht
+///   The height of the pseudo-element/background.
+@mixin bgShape($bg-img: transparent, $ht: auto) {
+    position: absolute;
+    content: " ";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $ht;
+    background-image: $bg-img;
+    background-size: cover; 
+    background-position: center;
+
+    @include respond(tab-port-mid) {
+        background-position: right;
+    }
+}
+
+/// Sets up basic grid used in the main sections.
+@mixin mainGrid {
+    display:grid;
+    gap: 5rem;
+    padding: 0 20rem;
+    justify-content: center;
+    margin: auto auto;
+
+    @include respond(tab-land) {
+        padding: 0 12rem;
+        gap: 4rem;
+    }
+
+    @include respond(tab-port) {
+        padding: 0 10rem;
+        gap: 3rem;
+    }
+
+    @include respond(phone) {
+        padding: 0 8rem;
+    }
+    
+    @include respond(phone-mid) {
+        column-gap: 0;
+        padding: 0 5rem;
+    }
+}
+
+/// Media Query Manager.
+///
+/// @param {string} $breakpoint
+///   The break point for the media query (note: 1em = 16px).
+///     phone: 0 - 600px
+///     phone-mid: 400px
+///     tab-port-mid: 800px - some strange things happened here
+///     tab-port (portrait): 600 - 900px
+///     tab-land (landscap): 900 - 1200px
+///     normal styles: 1200 - 1800px
+///     big-desktop: 1800px +
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone-mid {
+        @media only screen and (max-width: 25em) { @content };    //400px
+    }
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em) { @content };    //600px
+    }
+    @if $breakpoint == tab-port-mid {
+        @media only screen and (max-width: 50em) { @content };     //800px
+    }
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 56.25em) { @content };     //900px
+    }
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 75em) { @content };    //1200px
+    }
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 112.5em) { @content };    //1800px +
+    }
+}

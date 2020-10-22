@@ -1,0 +1,80 @@
+// Scroll to top button styling.
+.scroll-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;   
+    padding: 1rem;
+    background-color: transparent;
+    text-decoration: none;
+    outline: none;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 50%;
+    cursor: pointer;
+
+    position: fixed; 
+    right: 3rem;
+    bottom: 3rem;
+
+    @include respond(tab-port) {
+        right: 2rem;
+        bottom: 2rem;
+    }
+
+    @include respond(phone) {
+        height: 4rem;
+        width: 4rem;
+        padding: .5rem;
+    }
+
+    @include respond(phone-mid) {
+        right: 1rem;
+        bottom: 1rem;
+    }
+
+    z-index: 99;
+    transition: all .3s;
+
+    svg {
+        height: 4rem;
+        width: 4rem;
+
+        @include respond(phone) {
+            height: 3rem;
+            width: 3rem;
+        }       
+    }
+
+    // Color when not in footer.
+    &--light {
+        border-color: $color-grey-light-2;
+
+        svg {
+            fill: $color-grey-light-2;
+        }
+    }
+
+    // Color when in footer.
+    &--dark {
+        border-color: $color-btn-dark;
+
+        svg {            
+            fill: $color-btn-dark;
+        }
+    }
+
+    &:hover {
+        transform: scale(1.2) translate3d(0, 0, 1px);
+        perspective: 1px;
+        filter: drop-shadow(0 3px 3px rgba($color-black, .6));
+    }
+
+    // Depresses button.
+    &:active {
+        transform: scale(0.9) translate3d(0, 0, 0);
+        filter: none;
+        box-shadow: inset 0 0 3px rgba($color-black, .6);
+    }
+}

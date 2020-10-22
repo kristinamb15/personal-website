@@ -1,0 +1,189 @@
+// About Me section styling.
+.about {
+
+    &__grid {
+        @include mainGrid;
+        justify-items: stretch;
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: "title title"
+                            "bio photo"
+                            "research education";
+
+        @include respond(tab-port-mid) {
+            justify-items: center;
+            grid-template-areas: "title title"
+                                "bio photo"
+                                "bio education"
+                                "research research";   
+        }
+
+        @include respond(phone) {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "title title" 
+                                "photo photo"
+                                "education education"
+                                "bio bio"
+                                "research research";  
+        }
+    }
+
+
+    &__title {
+        grid-area: title;
+        justify-self: center;
+    }
+
+    &__text {
+        grid-area: bio;
+        align-self: center;
+
+        p {
+            font-size: 1.3rem;
+        }
+
+        // Separates text paragraphs.
+        p:not(:last-of-type) {
+            margin-bottom: 1rem;
+        }
+
+        // In-text GitHub link.
+        a {      
+            &:link,
+            &:visited {
+                text-decoration: none !important;
+            }            
+        }
+
+        @include respond(phone) {
+            text-align: center;
+        }
+    }
+
+    &__photo {
+        height: 40rem;
+        width: 40rem;
+        overflow: hidden;
+        border-radius: 50%;
+        grid-area: photo;
+        justify-self: center;
+        object-fit: cover;
+
+        &--img {
+            height: 100%;
+            width: auto;
+        }
+
+        @media only screen and (max-width: 80em) {
+            height: 35rem;
+            width: 35rem;
+        }
+
+        @include respond(tab-port) {
+            height: 30rem;
+            width: 30rem;         
+        }
+
+        @include respond(tab-port-mid) {
+            align-self: end;
+            height: 25rem;
+            width: 25rem;
+        }
+
+        @include respond(phone-mid) {
+            height: 20rem;
+            width: 20rem;
+        }
+    }
+
+    // Boxes for education items.
+    &__box {
+        border-radius: 4px;
+        padding: 2rem 3rem;
+        box-shadow: $shadow-accent-1, $shadow-accent-2;
+
+        @include respond(phone-mid) {
+            padding: 2rem 2rem;
+        }
+
+        // Thesis link.
+        a {      
+            &:link,
+            &:visited {
+                text-decoration: none !important;
+                color: currentColor;
+            }
+        }
+    }
+
+    &__education {
+        grid-area: education;        
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;    
+
+        &--deg {
+            color: $color-matching-1;
+
+            @include respond(tab-port) {
+                font-size: 1.4rem;
+            }
+        }
+
+        @include respond(tab-port-mid) {
+            align-self: start;
+        }
+
+    }
+
+    &__research {  
+        grid-area: research; 
+        display: grid;
+        row-gap: 1rem;
+        column-gap: 2.5rem;
+        grid-template-columns: max-content 2fr;
+        grid-template-rows: repeat(2, min-content);
+        align-items: start;
+
+        @include respond(phone) {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, min-content);
+        }
+
+        &--title {
+            justify-self: end;
+            grid-column: 1 / 2;
+            color: $color-matching-1;
+            border-bottom: 1px solid $color-matching-1;
+
+            @include respond(phone) {
+                grid-column: auto;
+                grid-row: auto;
+                justify-self: center;
+            }
+        }
+
+        &--text {
+            font-size: 1.3rem;
+            grid-column: 2 / 3;
+            justify-self: start;
+
+            @include respond(phone) {
+                grid-column: auto;
+                grid-row: auto;
+                justify-self: center;
+                text-align: center;
+            }
+        }
+    }
+
+    // GitHub and Thesis links.
+    &__box a:hover,
+    &__box a:active,
+    &__text a:hover {
+        color: $color-analagous-1;
+    }
+}
+
+
+
