@@ -18,7 +18,6 @@ const debug = false;
  * @param {object} obj Object being logged.
  * @param {string} msg Descriptive message. 
  */
-
 const logger = (obj, msg = 'Logger output') => {
     if (debug) {
         console.log(msg + ":");
