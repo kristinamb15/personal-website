@@ -1,7 +1,7 @@
 // Imports of all partial scss files.
 
-@import "abstracts/variables";
 @import "abstracts/mixins";
+@import "abstracts/variables";
 
 @import "base/animations";
 @import "base/base";
@@ -9,6 +9,7 @@
 @import "base/utilities";
 
 @import "components/about";
+@import "components/loader";
 @import "components/scroll-btn";
 @import "components/social";
 @import "components/tech-box";

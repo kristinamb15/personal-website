@@ -15,13 +15,6 @@
     transform: translate(-50%, -50%);
 }
 
-/// Centers an element vertically inside its parent.
-@mixin vertCenter {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
 /// Tooltip arrow for code snippets.
 @mixin arrow {
     display: none;
@@ -42,26 +35,19 @@
     }
 }
 
-/// Sets up the :before pseduo-element to use when clipping a backround shape.
+/// Sets up the :before pseduo-element to use when clipping a background shape.
 ///
-/// @param {image} $bg-img
-///   The background image to be clipped.
 /// @param {number} $ht
 ///   The height of the pseudo-element/background.
-@mixin bgShape($bg-img: transparent, $ht: auto) {
+@mixin bgShape($ht: auto) {
     position: absolute;
     content: " ";
     top: 0;
     left: 0;
     width: 100%;
     height: $ht;
-    background-image: $bg-img;
     background-size: cover; 
     background-position: center;
-
-    @include respond(tab-port-mid) {
-        background-position: right;
-    }
 }
 
 /// Sets up basic grid used in the main sections.
@@ -96,11 +82,11 @@
 ///
 /// @param {string} $breakpoint
 ///   The break point for the media query (note: 1em = 16px).
+///     phone-mid: 400px  - some strange things happened here
 ///     phone: 0 - 600px
-///     phone-mid: 400px
 ///     tab-port-mid: 800px - some strange things happened here
 ///     tab-port (portrait): 600 - 900px
-///     tab-land (landscap): 900 - 1200px
+///     tab-land (landscape): 900 - 1200px
 ///     normal styles: 1200 - 1800px
 ///     big-desktop: 1800px +
 @mixin respond($breakpoint) {

@@ -1,16 +1,24 @@
 // Header styling.
 .header {
-    @include bgShape($gradient-header, 100vh);
+    background-image: $gradient-header;
+    @include bgShape(95vh);
     
     background-attachment: fixed;
-    position: relative;   
+    position: relative;
 
     @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
-        height: 95vh;
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%,
                                     70% 100%, 0 80%);
                 clip-path: polygon(0 0, 100% 0, 100% 80%,
                                     70% 100%, 0 80%);
+    }
+
+    @include respond(tab-port-mid) {
+        background-position: right;
+    }
+
+    @include respond(phone) {
+        background-image: $gradient-header-phone;
     }
 
     &__text {

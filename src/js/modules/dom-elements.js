@@ -1,5 +1,16 @@
 /** @module dom-elements */
 
+/** Loader elements. */
+export const loaderElements = {
+    loader: document.querySelector('.loader'),
+    left: document.querySelector('.overlay__left'),
+    right: document.querySelector('.overlay__right'),
+    k: document.querySelector('#k'),
+    bOut: document.querySelector('#b-out'),
+    bInTop: document.querySelector('#b-in-top'),
+    bInBottom: document.querySelector('#b-in-bottom')
+};
+
 /** Elements to animate in the About Me section. */
 export const aboutElements = {
     degree: document.querySelector('.about__education'),

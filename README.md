@@ -32,6 +32,7 @@ Responsive design adjusts for functionality across devices.
 
 4. Edit files appropriately. Specifically, be sure to change/remove:
 
+    - SVGs/animations on loader screen (SVG code is before navigation in the html)
     - LinkedIn url (appears in the navigation and the social-bar located in the header)
     - GitHub url (appears in the navigation, social-bar, and 'About Me' text)
     - PhD Thesis url (appears in the navigation and 'About Me' section)
@@ -69,6 +70,7 @@ Responsive design adjusts for functionality across devices.
     ┃ ┣ 📂js
     ┃ ┃ ┣ 📂modules
     ┃ ┃ ┃ ┣ 📜dom-elements.js       // DOM elements controlled by scripts
+    ┃ ┃ ┃ ┣ 📜loader.js             // Controls loader screen
     ┃ ┃ ┃ ┣ 📜navigation.js         // Controls navigation menu behavior
     ┃ ┃ ┃ ┣ 📜observer.js           // Controls animations of section elements as they enter the viewport
     ┃ ┃ ┃ ┗ 📜scroll.js             // Controls scroll-to-top button
@@ -85,6 +87,7 @@ Responsive design adjusts for functionality across devices.
     ┃ ┃ ┃ ┗ 📜_utilities.scss       // Useful utility class styles
     ┃ ┃ ┣ 📂components
     ┃ ┃ ┃ ┣ 📜_about.scss           // 'About Me' styles
+    ┃ ┃ ┃ ┣ 📜_loader.scss          // Loader screen styles
     ┃ ┃ ┃ ┣ 📜_scroll-btn.scss      // Scroll-to-top button styles
     ┃ ┃ ┃ ┣ 📜_social.scss          // Social bar (located in the header) styles
     ┃ ┃ ┃ ┗ 📜_tech-box.scss        // 'Used on this page' and 'Other stuff I work with' styles
@@ -111,7 +114,7 @@ Responsive design adjusts for functionality across devices.
 
 ## Licensing
 
-Please respect that the content (text, about.jpg) is Copyright Kristina Brantley. Design and implementation elements are free for appropriate use under the MIT License (see [LICENSE.txt](LICENSE.txt)).
+Please respect that the content ("KB" SVGs, text, about.jpg) is Copyright Kristina Brantley. Design and implementation elements are free for appropriate use under the MIT License (see [LICENSE.txt](LICENSE.txt)).
 
 Public attribution is not required via the license, but if you use my code, it would be super rad to credit me for all this hard work. A simple link to this repository in your footer would suffice.
 

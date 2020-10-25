@@ -32,6 +32,8 @@ $gradient-main: radial-gradient(farthest-corner, #5f27cd, #5257E5, #54A7D8);
 
 $gradient-header: linear-gradient(to right bottom, #5f27cdcc, #5B52D1cc, #587CD5cc, #54A7D8cc, #51D1DCcc, #4DFCE0cc), url(../img/hero.jpg);
 
+$gradient-header-phone: linear-gradient(to right bottom, #5f27cdcc, #5B52D1cc, #587CD5cc, #54A7D8cc, #51D1DCcc, #4DFCE0cc), url(../img/hero-small.jpg);
+
 $gradient-footer: linear-gradient(to left top, #5f27cd, #5B52D1, #587CD5, #54A7D8, #51D1DC, #4DFCE0);
 
 $gradient-menu: radial-gradient(closest-corner at 2rem 2rem, #5f27cd, #5B52D1, #587CD5, #54A7D8, #51D1DC, #4DFCE0);

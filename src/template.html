@@ -3,14 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="./img/favicon.png">
     <title>KB | Let's get logical</title>
 </head>
 <body>
-
+    <div class="loader">
+        <div class="overlay overlay__left">
+            <svg id="k" viewBox="0 0 175 175">
+                <path d="
+                    M 10,10
+                    L 10,110
+                    40,110
+                    40,75
+                    55,110
+                    83,100
+                    68,65
+                    83,20
+                    55,10
+                    40,52
+                    40,10
+                    Z
+                "></path>
+            </svg>
+        </div>
+        <div class="overlay overlay__right">
+            <svg id="b" viewBox="0 0 175 175">
+                <g id="b-out">
+                    <path d="
+                    M 100,10
+                    L 100,110
+                    c 120,0 50,-60 30,-50 
+                    c 50,-20 40,-50 -20,-52
+                    Z
+                    "></path>
+                </g>
+                <g id="b-in-top">
+                    <path d="
+                        M 122,25
+                        L 122,45
+                        c 20,0 30,-15 0,-20
+                        Z
+                    "></path>
+                </g>
+                <g id="b-in-bottom">
+                    <path d="
+                        M 122,75
+                        L 122,95
+                        c 20,0 30,-15 0,-20
+                        Z
+                    "></path>
+                </g>
+            </svg>
+        </div>
+    </div>
     <div class="navigation">
         <input type="checkbox" class="navigation__checkbox" id="nav-check">
         <label for="nav-check" class="navigation__button">

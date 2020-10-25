@@ -19,7 +19,8 @@
 
         // Grey background and shape.
         &::before {
-            @include bgShape($gradient-grey, $section-height);
+            background-image: $gradient-grey;
+            @include bgShape($section-height);
 
             @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
                 -webkit-clip-path: polygon(0 20%, 20% 0, 100% 20%,

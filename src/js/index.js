@@ -2,6 +2,7 @@ import Observer from './modules/observer.js';
 import * as DOM from './modules/dom-elements.js';
 import { scrollHandler } from './modules/scroll.js';
 import { animateX, navMenuHandler } from './modules/navigation.js';
+import { startLoader } from './modules/loader.js';
 
 import '../sass/main.scss';
 
@@ -18,11 +19,17 @@ const debug = false;
  * @param {object} obj Object being logged.
  * @param {string} msg Descriptive message. 
  */
-const logger = (obj, msg = 'Logger output') => {
+export const logger = (obj, msg = 'Logger output') => {
     if (debug) {
         console.log(msg + ":");
         console.log(obj);
     }
+};
+
+/** Activate loader overlay. */
+DOM.loaderElements.k.onload = () => {
+    logger(document.readyState, 'Ready State status');
+    startLoader();
 };
 
 /**
@@ -82,6 +89,11 @@ logger(DOM.navElements, 'Nav menu functionality');
 
 /** Nav button X animations. */
 DOM.navBtn.addEventListener('click', animateX);
+
+/** Reset scroll position on unload. */
+window.onbeforeunload = () => {
+    scrollHandler();
+};
 
 
 

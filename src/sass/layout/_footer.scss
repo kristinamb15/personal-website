@@ -6,7 +6,8 @@
 
     // Background shape and color.
     &::before {
-        @include bgShape($gradient-footer, $footer-height);
+        background-image: $gradient-footer;
+        @include bgShape($footer-height);
 
         @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
             -webkit-clip-path: polygon(0 30%, 50% 0, 100% 30%, 100% 100%, 0 100%);

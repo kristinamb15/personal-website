@@ -156,5 +156,85 @@
   animation-fill-mode: reverse;
 }
 
+/// Loader animations.
+@keyframes draw-k {
+  from {
+    stroke-dashoffset: 465;
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+.draw-k {
+  animation: draw-k 1s linear both;
+}
+
+@keyframes draw-b {
+  from {
+    stroke-dashoffset:465;
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+.draw-b-out {
+  animation: draw-b 1s linear both 1s;
+}
+
+@keyframes draw-in {
+  from {
+    stroke-dashoffset: 65.8;
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+.draw-b-in-top {
+  animation: draw-in .2s linear both 2s;
+}
+
+.draw-b-in-bottom {
+  animation: draw-in .2s linear both 2.2s;
+}
+
+@keyframes loader-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.loader-left {
+  animation: loader-left 1.5s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes loader-right {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.loader-right {
+  animation: loader-right 1.5s linear;
+  animation-fill-mode: forwards;
+}
+
 
 
