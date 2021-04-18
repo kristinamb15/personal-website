@@ -23,8 +23,8 @@
             @include bgShape($section-height);
 
             @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
-                -webkit-clip-path: polygon(0 20%, 20% 0, 100% 20%,
-                                            100% 80%, 80% 100%, 0 80%);
+                -webkit-clip-path: polygon(0 10%, 30% 0, 100% 10%,
+                                            100% 90%, 70% 100%, 0 90%);
                         clip-path: polygon(0 10%, 30% 0, 100% 10%,
                                             100% 90%, 70% 100%, 0 90%);
             }
@@ -47,4 +47,35 @@
     }
 }
 
+// Projects section.
+.section-projects {
+    background-color: transparent;   
+    position: relative;
+    height: $section-height;
+    padding: 10rem 0 20rem 0;
+    margin-bottom: -10rem;
 
+    // Grey background and shape.
+    &::before {
+        background-image: $gradient-grey;
+        @include bgShape($section-height);
+
+        @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+            -webkit-clip-path: polygon(0 10%, 30% 0, 100% 10%, 100% 100%, 0 100%);
+                    clip-path: polygon(0 10%, 30% 0, 100% 10%, 100% 100%, 0 100%);
+        }
+
+        @include respond(phone) {
+            @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+                -webkit-clip-path: polygon(0 5%, 30% 0, 100% 5%, 100% 100%, 0 100%);
+                        clip-path: polygon(0 5%, 30% 0, 100% 5%, 100% 100%, 0 100%);
+            }
+    
+        }
+    }
+
+    @include respond(tab-port) {
+        margin-bottom: -5rem;
+        padding: 8rem 0 14rem 0;
+    }
+}

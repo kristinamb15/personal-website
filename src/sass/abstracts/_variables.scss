@@ -24,7 +24,7 @@ $color-linkedin: #007bb5;
 $color-github: #A0A0A0;
 
 /// Reusable gradients.
-$gradient-primary: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+$gradient-primary: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
 
 $gradient-grey: linear-gradient(to right bottom, rgba($color-grey-light-2, 0.4), rgba($color-grey-dark-2, 0.4));
 
@@ -38,12 +38,18 @@ $gradient-footer: linear-gradient(to left top, #5f27cd, #5B52D1, #587CD5, #54A7D
 
 $gradient-menu: radial-gradient(closest-corner at 2rem 2rem, #5f27cd, #5B52D1, #587CD5, #54A7D8, #51D1DC, #4DFCE0);
 
+$gradient-card: linear-gradient(to right bottom, rgba($color-grey-dark-2, 0.9), rgba($color-grey-dark-1, 0.9), rgba($color-black, 0.9));
+
+$gradient-card-header: linear-gradient(to right bottom,
+rgba($color-primary-light, .85), rgba($color-primary-dark, 0.85));
+
 /// Font variables.
 $font-primary: 'Raleway', sans-serif;
 $font-display: 'Monoton', cursive;
 
 /// Reusable shadows.
-$shadow-plain: 0 0 .5rem rgba(0, 0, 0, 0.6);
+$shadow-plain: 0 0 .5rem rgba($color-black, .6);
+$shadow-light: 0 1.5rem 4rem rgba($color-black, .15);
 $shadow-hover: .5rem 1rem 2rem rgba($color-black, .6);
 $shadow-tech: 0 3px 3px rgba($color-black, .4);
 $shadow-accent-1: -.5rem .5rem .5rem rgba($color-matching-1, .4);

@@ -71,6 +71,55 @@
     animation: moveInUp 1s ease-out;
 }
 
+/// Card flip.
+@keyframes flip {
+    from {
+        transform: rotate3d(0, 1, 0, 0deg);
+        animation-timing-function: ease-in;
+    }
+
+    to {
+        transform: rotate3d(0, 1, 0, 180deg);
+    }
+}
+
+/// Flips an element in.
+@keyframes rotateInFront {
+    from {
+        transform: rotate3d(0, 1, 0, -180deg);
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+
+    to {
+        transform: rotate3d(0, 1, 0, 0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes rotateInBack {
+    from {
+        transform: rotate3d(0, 1, 0, 0deg);
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+
+    to {
+        transform: rotate3d(0, 1, 0, 180deg); 
+        opacity: 1;
+    }
+}
+
+.rotateInFront {
+    animation: rotateInFront 1s;
+    transform-style: preserve-3d;
+}
+
+.rotateInBack {
+    animation: rotateInBack 1s;
+    transform-style: preserve-3d;
+}
+
 /// Heartbeat pulse animation.
 @keyframes heartBeat {
   0% {

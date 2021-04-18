@@ -1,0 +1,210 @@
+// Project card.
+.card {
+    perspective: 150rem;
+    transform-style: preserve-3d; 
+    position: relative;
+    height: 30rem;
+
+    @include respond(tab-port) {
+        height: 50rem;
+        display: flex;
+        flex-direction: column;
+        box-shadow: $shadow-light;
+    }
+
+    @include respond(phone-mid) {
+        height: 30rem;
+    }
+
+    &__side {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        backface-visibility: hidden;
+        overflow: hidden;
+        border-radius: 3px;
+        box-shadow: $shadow-light;
+        transition: transform .8s ease;
+
+        @include respond(tab-port) {
+            position: relative;
+            box-shadow: none;
+            border-radius: 0;
+        }
+
+        &--front {
+            background-color: $color-white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: stretch;
+            transform: rotateY(0);
+
+            @include respond(tab-port) {
+                height: 40%;
+                border-radius: 3px 3px 0 0;
+            }
+
+            @include respond(phone) {
+                height: 50%;
+            }
+
+            @include respond(phone-mid) {
+                height: 15%;
+            }
+        }
+
+        &--back {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            background-image: $gradient-primary;
+            transform: rotateY(180deg);
+            padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+            color: $color-grey-light-2;
+
+            @include respond(tab-port) {
+                height: 60%;
+                transform: rotateY(0);
+                padding: 1.25rem 1.25rem 0.25rem 1.25rem;
+                border-radius: 0 0 3px 3px;
+            }
+
+            @include respond(phone) {
+                height: 50%;
+                padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+            }
+
+            @include respond(phone-mid) {
+                height: 85%;
+            }
+        }
+    }
+
+    &:hover &__side--front {
+        transform: rotateY(-180deg);
+
+        @include respond(tab-port) {
+            transform: rotateY(0);
+        }
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0);
+    }
+
+    &__img {
+        background-size: cover;
+        height: 80%;
+        background-blend-mode: screen;
+        filter: blur(0.5px);
+
+        &--1 {
+            background-image: url(../img/proj_conspiracy.png), $gradient-primary;
+        }
+
+        &--2 {
+            background-image: url(../img/proj_horror.png), $gradient-primary;
+        }
+
+        &--3 {
+            background-image: url(../img/proj_pdf.png), $gradient-primary;
+        }
+
+        @include respond(phone-mid) {
+            display: none;
+            height: 0;
+        }
+    }
+
+    &__heading {
+        height: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 1.25rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        color: $color-grey-dark-1;
+        text-shadow: 0 0 2px rgba($color-matching-1, 0.8);
+        padding: 0.5rem;
+        background-color: rgba($color-grey-light-2, 0.8); 
+        
+        @include respond(tab-port) {
+            padding: 0.75rem;
+            border-top: 1px solid $color-primary;
+            border-bottom: 1px solid $color-primary;
+        }
+
+        @include respond(phone-mid) {
+            height: 100%;
+            border-top: none;
+        }
+    }
+
+    &__description {
+        font-size: 1.3rem;
+
+        @include respond(tab-port) {
+            font-size: 1.2rem;
+        }
+    }
+
+    &__tech {
+        list-style: none;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 1rem;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 1.1rem;
+
+        @include respond(tab-port) {
+            font-size: 1rem;
+        }
+
+        li {
+            padding: .2rem .4rem;
+            background-color: rgba($color-matching-1, 0.8);
+            border-radius: 2px;
+            text-align: center;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        a {
+            @include buttonPress;
+
+            &:link,
+            &:visited {
+                text-decoration: none;
+            }
+        }
+
+        svg {
+            height: 2.5rem;
+            width: 2.5rem;
+            fill: $color-grey-light-2;
+
+            @include respond(tab-land) {
+                height: 2rem;
+                width: 2rem;
+            }
+
+            @include respond(phone) {
+                height: 1.75rem;
+                width: 1.75rem;
+            }
+        }
+    }
+}

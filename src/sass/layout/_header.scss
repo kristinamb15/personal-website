@@ -41,13 +41,19 @@
         // First name slide in.
         &--line-1 {
             display: block;
-            animation: moveInLeft 1s ease-out;
+            opacity: 0;
+            animation: moveInLeft 2s ease-out;
+            animation-delay: 4s;
+            animation-fill-mode: forwards;
         }
         
         // Last name slide in.
         &--line-2 {
             display: block;
-            animation: moveInRight 1s ease-out;
+            opacity: 0;
+            animation: moveInRight 2s ease-out;
+            animation-delay: 4s;
+            animation-fill-mode: forwards;
         }
         
         // Tagline fade-in.
@@ -56,6 +62,7 @@
             opacity: 0;
             animation: fadeIn 2s ease-in 1s;
             animation-fill-mode: forwards;
+            animation-delay: 4s;
         }
     }
 }

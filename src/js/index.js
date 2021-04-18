@@ -2,7 +2,7 @@ import Observer from './modules/observer.js';
 import * as DOM from './modules/dom-elements.js';
 import { scrollHandler } from './modules/scroll.js';
 import { animateX, navMenuHandler } from './modules/navigation.js';
-import { startLoader } from './modules/loader.js';
+import { startLoader} from './modules/loader.js';
 
 import '../sass/main.scss';
 
@@ -27,7 +27,8 @@ export const logger = (obj, msg = 'Logger output') => {
 };
 
 /** Activate loader overlay. */
-DOM.loaderElements.k.onload = () => {
+window.onload = () => {
+    logger(document.readyState, 'Window loaded')
     logger(document.readyState, 'Ready State status');
     startLoader();
 };
@@ -58,6 +59,12 @@ const techOtherObserver = new Observer(DOM.techOtherElements);
 techOtherObserver.animateIn('moveInUp');
 techOtherObserver.createObserver();
 logger(techOtherObserver, 'Other stuff I work with animations');
+
+/** Animating 'Projects' section. */
+const projectsObserver = new Observer(DOM.projectsElements);
+projectsObserver.animateIn('rotateInFront', false, 'rotateInBack');
+projectsObserver.createObserver();
+logger(projectsObserver, 'Projects animations');
 
 /**
  * SCROLL TO TOP BUTTON CONTROLLER
@@ -92,6 +99,7 @@ DOM.navBtn.addEventListener('click', animateX);
 
 /** Reset scroll position on unload. */
 window.onbeforeunload = () => {
+    history.scrollRestoration = "manual";
     scrollHandler();
 };
 

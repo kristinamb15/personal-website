@@ -132,7 +132,7 @@
             grid-column: 2 / 6;
         }
     
-        &--npm {
+        &--webpack {
             justify-self: end;
             grid-column: 3 / 6;
         }
@@ -181,8 +181,8 @@
             width: 60rem;
         }
     
-        &--npm {
-            width: 40rem;
+        &--webpack {
+            width: 42rem;
         }
     }
 
@@ -211,7 +211,7 @@
         grid-area: item-4;
     }
 
-    &--npm {
+    &--webpack {
         grid-area: item-5;
     }
 }

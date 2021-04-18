@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="./img/favicon.png">
     <title>KB | Let's get logical</title>
 </head>
@@ -74,6 +75,7 @@
                 <li class="navigation__item" id="about">About Me</li>
                 <li class="navigation__item" id="web">Used on this page</li>
                 <li class="navigation__item" id="other">Other stuff I use</li>
+                <li class="navigation__item" id="projects">Projects</li>
                 <li class="navigation__separator">&nbsp;</li>
                 <div class="navigation__box">
                     <div class="navigation__missed">Links you may have missed</div>
@@ -161,16 +163,19 @@
                         After graduating in May 2019 with a PhD in Mathematics and spending time teaching undergraduates, I'm ready to apply my zest for logic and organization to the world of software development.
                     </p>
                     <p>
-                        I'm an autodidact with a hunger for knowledge &mdash; learning HTML & CSS, Sass, JavaScript, Python, and MySQL via self-study, and currently learning the React framework. 
+                        I'm an autodidact with a hunger for knowledge &mdash; learning HTML & CSS, Sass, JavaScript, Python, and MySQL via self-study, and currently learning multiple things, including Docker, Django, and React. 
                     </p>
                     <p>
                         I enjoy writing readable, reusable code and designing beautiful, useful, and responsive things. From the front to the back, I'm here for the full stack.
                     </p>
                     <p>
+                        My newest passion lies in the realm of data science and machine learning. I've immersed myself in the various Python machine learning libraries (SciKit, Pandas, NumPy, Matplotlib, Seaborn, PyTorch) and have put my skills to use in some pretty neat projects, including a <a class="link__text" href="http://conspiracy.kristinabrantley.com/" target="_blank">neural network that generates conspiracy theories</a>.
+                    </p>
+                    <p>
                         When I'm not being a mathemagician, I enjoy yoga, hanging out with my husband and three dogs, and solving Rubiks Cubes of various sizes.
                     </p>                 
                     
-                    <p>Stop by my <a class="link__git" href="https://github.com/kristinamb15/personal-website" target="_blank">GitHub</a> to check out the code for this site.</p>
+                    <p>Stop by my <a class="link__text" href="https://github.com/kristinamb15" target="_blank">GitHub</a> to check out the code for this site and other projects.</p>
                 </div>                
             </div>
         </section>
@@ -180,7 +185,7 @@
                 <h2 class="heading-2 tech__title u-margin-bottom-medium">
                     Used on this site
                 </h2>
-                <div class="tech__item tech__web u-hidden" id="tech__web--css">
+                <div class="tech__item tech__web u-hidden u-disable-hover" id="tech__web--css">
                     <svg>
                         <use xlink:href="./img/sprite.svg#icon-css3"></use>
                     </svg>
@@ -207,7 +212,7 @@
                     </figure>
                 </div>
 
-                <div class="tech__item tech__web u-hidden" id="tech__web--html">
+                <div class="tech__item tech__web u-hidden u-disable-hover" id="tech__web--html">
                     <svg>
                         <use xlink:href="./img/sprite.svg#icon-html5"></use>
                     </svg>
@@ -225,7 +230,7 @@
                     </figure>
                 </div>
 
-                <div class="tech__item tech__web u-hidden" id="tech__web--sass">
+                <div class="tech__item tech__web u-hidden u-disable-hover" id="tech__web--sass">
                     <svg>
                         <use xlink:href="./img/sprite.svg#icon-sass"></use>
                     </svg>
@@ -243,7 +248,7 @@
                     </figure>
                 </div>
 
-                <div class="tech__item tech__web u-hidden" id="tech__web--js">
+                <div class="tech__item tech__web u-hidden u-disable-hover" id="tech__web--js">
                     <svg>
                         <use xlink:href="./img/sprite.svg#icon-javascript"></use>
                     </svg>
@@ -260,13 +265,13 @@ logger(techWebObserver, 'Used on this page animations');</code></pre>
                     </figure>
                 </div>
 
-                <div class="tech__item tech__web u-hidden" id="tech__web--npm">
+                <div class="tech__item tech__web u-hidden u-disable-hover" id="tech__web--webpack">
                     <svg>
-                        <use xlink:href="./img/sprite.svg#icon-npm"></use>
+                        <use xlink:href="./img/sprite.svg#icon-webpack"></use>
                     </svg>
-                    <h4 class="heading-4 tech__name">npm</h4>
+                    <h4 class="heading-4 tech__name">webpack</h4>
                 </div>
-                <div class="tech__snippet tech__snippet--npm">
+                <div class="tech__snippet tech__snippet--webpack">
                     <figure class="tech__snippet--fig">
                         <pre><code class="json">{
 "scripts": {
@@ -316,6 +321,119 @@ logger(techWebObserver, 'Used on this page animations');</code></pre>
                     <h4 class="heading-4 tech__name">visual studio code</h4>
                 </div>
             </div>         
+        </section>
+
+        <section class="section-projects" id="nav-projects">
+            <div class="projects__grid">
+                <h2 class="heading-2 projects__title">
+                    Projects
+                </h2>
+                <div class="card projects--1 u-hidden u-disable-hover" id="card-1">
+                    <div class="card__side card__side--front">
+                        <div class="card__img card__img--1">
+                            &nbsp;
+                        </div>
+                        <p class="card__heading">
+                            Conspiracy Theory Generator
+                        </p>
+                    </div>
+                    <div class="card__side card__side--back">
+                        <p class="card__description">
+                            A web app for generating conspiracy theories from seed text. Built on Long Short Term Memory (LSTM) Recurrent Neural Network (RNN) with pre-trained GloVe word embedding trained on text data scraped from Wikipedia pages on conspiracy theories in the United States. Deployed via Heroku.
+                        </p>                      
+                        <ul class="card__tech">
+                            <li>Python</li>
+                            <li>PyTorch</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Flask</li>
+                        </ul>  
+                        <div class="card__buttons">
+                            <a href="http://conspiracy.kristinabrantley.com/" target="_blank">
+                                <svg>
+                                    <use xlink:href="./img/sprite.svg#icon-launch"></use>
+                                </svg>
+                            </a>
+                            <a href="https://github.com/kristinamb15/conspiracy-generator" target="blank">
+                                <svg>
+                                    <use xlink:href="./img/sprite.svg#icon-github-alt"></use>
+                                </svg>
+                            </a>
+                        </div>                      
+                    </div>
+                </div>
+                <div class="card projects--2 u-hidden u-disable-hover" id="card-2">
+                    <div class="card__side card__side--front">
+                        <div class="card__img card__img--2">
+                            &nbsp;
+                        </div>
+                        <p class="card__heading">
+                            Analyzing horror movie deaths by race and gender
+                        </p>
+                    </div>
+                    <div class="card__side card__side--back">
+                        <p class="card__description">
+                            An analysis of horror movie character deaths by race/gender using data scraped from various websites. Data visualizations as well as attempts to use various machine learning algorithms to predict whether or not a character dies are included.
+                        </p>                      
+                        <ul class="card__tech">
+                            <li>Python</li>
+                            <li>Jupyter</li>
+                            <li>Beautiful Soup</li>
+                            <li>Pandas</li>
+                            <li>Matplotlib</li>
+                            <li>Seaborn</li>
+                            <li>Plotly/Cufflinks</li>
+                        </ul>  
+                        <div class="card__buttons">
+                            <a href="https://nbviewer.jupyter.org/github/kristinamb15/horror-project/blob/main/notebooks/a_and_v.ipynb" target="_blank">
+                                <svg>
+                                    <use xlink:href="./img/sprite.svg#icon-launch"></use>
+                                </svg>
+                            </a>
+                            <a href="https://github.com/kristinamb15/horror-project" target="blank">
+                                <svg>
+                                    <use xlink:href="./img/sprite.svg#icon-github-alt"></use>
+                                </svg>
+                            </a>
+                        </div>                      
+                    </div>
+                </div>   
+                <div class="card projects--3 u-hidden u-disable-hover" id="card-3">
+                    <div class="card__side card__side--front">
+                        <div class="card__img card__img--3">
+                            &nbsp;
+                        </div>
+                        <p class="card__heading">
+                            Exploratory Data Analysis of large PDF File
+                        </p>
+                    </div>
+                    <div class="card__side card__side--back">
+                        <p class="card__description">
+                            Exploratory data analysis of large PDF file including word frequency analysis and term frequency-inverse document frequecny (TF-IDF) analysis with wordcloud visualations, Latent Dirichlet Allocation (LDA) topic analysis, and summarization. Analysis completed on entire document as well as individual chapters.
+                        </p>                      
+                        <ul class="card__tech">
+                            <li>Python</li>
+                            <li>Jupyter</li>
+                            <li>NLTK</li>
+                            <li>Scikit-learn</li>
+                            <li>Tika</li>
+                            <li>Gensim</li>
+                        </ul>  
+                        <div class="card__buttons">
+                            <a href="https://nbviewer.jupyter.org/github/kristinamb15/pdf-analysis/blob/main/pdf_analysis.ipynb" target="_blank">
+                                <svg>
+                                    <use xlink:href="./img/sprite.svg#icon-launch"></use>
+                                </svg>
+                            </a>
+                            <a href="https://github.com/kristinamb15/pdf-analysis" target="blank">
+                                <svg>
+                                    <use xlink:href="./img/sprite.svg#icon-github-alt"></use>
+                                </svg>
+                            </a>
+                        </div>                      
+                    </div>
+                </div>                       
+            </div>
         </section>
 
         <footer class="footer" id="footer">

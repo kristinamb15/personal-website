@@ -13,3 +13,6 @@
 /// Hides/unhides elements for animation/changes.
 .u-hidden { opacity: 0; }
 .u-visible { opacity: 1; }
+
+/// Disables hover effect for animations.
+.u-disable-hover { pointer-events: none; }

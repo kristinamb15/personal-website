@@ -1,0 +1,38 @@
+// Projects section styling.
+.projects {
+
+    &__grid {
+        @include mainGrid;
+
+        justify-items: stretch;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "title title title"
+                            "project1 project2 project3";
+        z-index: 2;
+
+        @include respond(phone) {
+            grid-template-columns: 0.75fr;
+            grid-template-areas: "title" 
+                                "project1"
+                                "project2"
+                                "project3";  
+        }
+    }
+
+    &__title {
+        grid-area: title;
+        justify-self: center;
+    }
+
+    &--1 {
+        grid-area: project1;
+    }
+
+    &--2 {
+        grid-area: project2;
+    }
+
+    &--3 {
+        grid-area: project3;
+    }
+}

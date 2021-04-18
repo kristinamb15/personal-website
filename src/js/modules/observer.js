@@ -34,8 +34,9 @@ export default class Observer {
      * Create callback function to animate elements into the page.
      * @param {string} animation animation class name.
      * @param {boolean} single set to true to animate elments one by one.
+     * @param {string} backface animation to use on backface if two-sided element.
      */
-    animateIn(animation, single = false) {
+    animateIn(animation, single = false, backface = '') {
         const callback = (entries, observer) => {
             entries.forEach( (entry, i) => {
                 let t;
@@ -47,8 +48,19 @@ export default class Observer {
 
                 if(entry.isIntersecting) {
                     setTimeout(() => {
-                        entry.target.classList.add(animation);
+                        if (backface != '') {
+                            entry.target.querySelector('[class$=--front]').classList.add(animation);
+                            entry.target.querySelector('[class$=--back]').classList.add(backface);
+                        } else {
+                            entry.target.classList.add(animation);
+                        }
                         entry.target.classList.replace('u-hidden', 'u-visible');
+
+                        if (entry.target.classList.contains('u-disable-hover')) {
+                            setTimeout(() => {
+                                entry.target.classList.remove('u-disable-hover');
+                            }, 1200);
+                        }
                     }, t * 250);
                     observer.unobserve(entry.target);
                 }

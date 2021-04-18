@@ -2,6 +2,7 @@
 
 /** Loader elements. */
 export const loaderElements = {
+    page: document.querySelector('body'),
     loader: document.querySelector('.loader'),
     left: document.querySelector('.overlay__left'),
     right: document.querySelector('.overlay__right'),
@@ -22,6 +23,9 @@ export const aboutElements = {
 /** Elements to animate in the Used On This Page/Other Stuff section. */
 export const techWebElements = document.querySelectorAll('[id^="tech__web"]');
 export const techOtherElements = document.querySelectorAll('[id^="tech__other"]');
+
+/** Elements to animate in the Projects section. */
+export const projectsElements = document.querySelectorAll('[id^="card"]');
 
 /** Elements associated to scroll to top button and classes to change when entering header/footer. */
 export const scrollBtn = document.getElementById('scroll-btn')
